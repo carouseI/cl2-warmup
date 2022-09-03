@@ -19,7 +19,7 @@
                 {
                     "name": "Movement",
                     "id": "1c3c5863-b9d3-466d-8394-4e9e7f33017f",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

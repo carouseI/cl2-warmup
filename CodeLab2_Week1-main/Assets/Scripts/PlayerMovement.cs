@@ -13,26 +13,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement(); //call
-
-        //Vector3 pos = transform.position;
-
-        //if (Input.GetKey("W"))
-        //{
-        //    pos.y += speed * Time.deltaTime;
-        //}
-        //if (Input.GetKey("A"))
-        //{
-        //    pos.x -= speed * Time.deltaTime;
-        //}
-        //if (Input.GetKey("S"))
-        //{
-        //    pos.y -= speed * Time.deltaTime;
-        //}
-        //if (Input.GetKey("D"))
-        //{
-        //    pos.x += speed * Time.deltaTime;
-        //}
-        //transform.position = pos;
     }
 
     public void Movement()
