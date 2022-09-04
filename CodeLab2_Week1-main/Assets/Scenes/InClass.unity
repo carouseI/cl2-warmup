@@ -123,6 +123,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &407279197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407279199}
+  - component: {fileID: 407279198}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &407279198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407279197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9447ed36344124d2788577e19b4e2afa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToPool:
+  - circle: Blue
+    poolAmount: 2
+    poolObject: {fileID: 8218883895661145634, guid: 7ec72c2b8540b4a80a9650992ffba21b, type: 3}
+    shouldExpand: 1
+  - circle: Green
+    poolAmount: 2
+    poolObject: {fileID: 6522392447404174706, guid: b41dd10f6b628481d93e5ce0ab3693c7, type: 3}
+    shouldExpand: 1
+  - circle: Red
+    poolAmount: 2
+    poolObject: {fileID: 2845396488706238598, guid: bb17f2e00945b41858644cdca4795720, type: 3}
+    shouldExpand: 1
+  - circle: Yellow
+    poolAmount: 2
+    poolObject: {fileID: 6332375287432333310, guid: cf19fcb17c4ef47f19661c02d37a279f, type: 3}
+    shouldExpand: 1
+--- !u!4 &407279199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407279197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1917581850
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2124668639}
   - component: {fileID: 2124668638}
-  - component: {fileID: 2124668641}
   - component: {fileID: 2124668640}
   m_Layer: 0
   m_Name: Spawner
@@ -257,15 +317,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 469c503b7318446e0a6dbeb4e2f4e051, type: 3}
   - {fileID: 21300000, guid: 21ba1126c43294a819ea53fecc36a278, type: 3}
   wave:
-  - delayTime: 0.25
+  - delayTime: 1
     spawnAmount: 2
-  - delayTime: 0.25
+  - delayTime: 1
     spawnAmount: 4
-  - delayTime: 0.25
+  - delayTime: 1
     spawnAmount: 6
-  - delayTime: 0.25
+  - delayTime: 1
     spawnAmount: 8
-  - delayTime: 0.25
+  - delayTime: 1
     spawnAmount: 10
 --- !u!4 &2124668639
 Transform:
@@ -294,23 +354,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3455e184e4da49efa8b0827a6485b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2124668641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124668637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da386722e74ca49ce9f875ae90264c5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: ec2c48d85835b4f768627d851fc171c4, type: 3}
-  - {fileID: 21300000, guid: 1a290e9671c34407e95b61ec92c61adb, type: 3}
-  - {fileID: 21300000, guid: 469c503b7318446e0a6dbeb4e2f4e051, type: 3}
-  - {fileID: 21300000, guid: 21ba1126c43294a819ea53fecc36a278, type: 3}
 --- !u!1001 &6073788556292367093
 PrefabInstance:
   m_ObjectHideFlags: 0
