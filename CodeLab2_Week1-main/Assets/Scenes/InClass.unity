@@ -304,6 +304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3747247296816201947, guid: 954191c9579e34044b06e6065e177a2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5013928931201924663, guid: 954191c9579e34044b06e6065e177a2b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -367,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3aa2e85c8a694a4db7405a22fc4c066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0
+  movementSpeed: 12
 --- !u!114 &6073788556292367101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,3 +384,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfee19a932d4d491fb0c27efdeaeea01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6073788556292367104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073788556292367094}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbad67d822104f86a453eb9c1b5a177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 10
