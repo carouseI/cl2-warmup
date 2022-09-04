@@ -7,22 +7,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float movementSpeed;
 
-    private Vector3 currentPosition;
+    private Vector3 playerPosition;
+
+    private void Start()
+    {
+        playerPosition = transform.position; //set player default pos
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Movement(); //call
-    }
-
-    public void Movement()
-    {
-
         //if (Input.GetKey(KeyCode.W)) currentPosition.z += speed * Time.deltaTime; //enable vertical movement (u)
         //if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //enable vertical movement (d)
-        if (Input.GetKey(KeyCode.D)) currentPosition.x += movementSpeed * Time.deltaTime; //enable lateral movement (l)
-        if (Input.GetKey(KeyCode.A)) currentPosition.x -= movementSpeed * Time.deltaTime; //enable lateral movement (r)
+        if (Input.GetKey(KeyCode.D)) playerPosition.x += movementSpeed * Time.deltaTime; //enable lateral movement (l)
+        if (Input.GetKey(KeyCode.A)) playerPosition.x -= movementSpeed * Time.deltaTime; //enable lateral movement (r)
 
-        transform.position = currentPosition; //set to current position
+        transform.position = playerPosition; //set to current position
     }
 }
