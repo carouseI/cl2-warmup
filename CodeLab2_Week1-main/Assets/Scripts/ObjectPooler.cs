@@ -26,12 +26,6 @@ public class ObjectPooler : MonoBehaviour
             }
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
 
 [System.Serializable]

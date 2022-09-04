@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
-    [SerializeField] GameObject[] diskPrefab;
-    [SerializeField] float secondSpawn = 0.5f;
-    [SerializeField] float minTrans;
-    [SerializeField] float maxTrans;
+    [SerializeField] GameObject[] diskPrefab; //prefab ref storage
+    [SerializeField] float secondSpawn = 0.5f; //time @ which next wave spawns
+    [SerializeField] float minTrans; //furthest possible spawn point to the left
+    [SerializeField] float maxTrans; //furthest possible spawn point to the right
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +19,12 @@ public class Disk : MonoBehaviour
     {
         while (true)
         {
-            var wanted = Random.Range(minTrans, maxTrans);
+            var wanted = Random.Range(minTrans, maxTrans); //spawn within min + max transforms
             var position = new Vector3(wanted, transform.position.y);
             GameObject gameObject = Instantiate(diskPrefab[Random.Range(0, diskPrefab.Length)],
             position, Quaternion.identity);
-            yield return new WaitForSeconds(secondSpawn);
-            Destroy(gameObject, 5f);
+            yield return new WaitForSeconds(secondSpawn); //spawn frequency
+            Destroy(gameObject, 5f); //remove from scene
 
         }
     }
