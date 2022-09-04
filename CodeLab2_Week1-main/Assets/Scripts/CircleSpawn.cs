@@ -12,8 +12,8 @@ public class CircleSpawn : MonoBehaviour
     private float[] xPositions; //float array, predefined positions
 
     [SerializeField]
-    private GameObject[] circlePrefabs;
-    //private Sprite[] sprites;
+    //private GameObject[] circlePrefabs;
+    private Sprite[] sprites;
 
     [SerializeField]
     private Wave[] wave;
@@ -44,19 +44,19 @@ public class CircleSpawn : MonoBehaviour
         
     }
 
-    //void Spawn()
-    //{
-    //    GameObject go = Instantiate(Resources.Load("Prefabs/Circle")) as GameObject; //spawn prefabs
-    //    int num = GetComponent<ColorPicker>().SetSprite(); //call colour picker
-    //    go.GetComponent<SpriteRenderer>().sprite = sprites[num]; //call sprite renderer
-    //}
-
-    void SpawnCircle(float xPos)
+    void Spawn()
     {
-        int r = Random.Range(0, 4); //4 circle types
-        GameObject circleObj = Instantiate(circlePrefabs[r], new Vector3(xPos, transform.position.y, 0), Quaternion.identity); //spawn @ same pos as spawner; quaternion.identity = cancel rotation, use circleObj as default
-
+        GameObject go = Instantiate(Resources.Load("Prefabs/Circle")) as GameObject; //spawn prefabs
+        int num = GetComponent<ColorPicker>().SetSprite(); //call colour picker
+        go.GetComponent<SpriteRenderer>().sprite = sprites[num]; //call sprite renderer
     }
+
+    //void SpawnCircle(float xPos)
+    //{
+    //    int r = Random.Range(0, 4); //4 circle types
+    //    //GameObject circleObj = Instantiate(circlePrefabs[r], new Vector3(xPos, transform.position.y, 0), Quaternion.identity); //spawn @ same pos as spawner; quaternion.identity = cancel rotation, use circleObj as default
+
+    //}
 
     void SelectWave()
     {
@@ -67,8 +67,23 @@ public class CircleSpawn : MonoBehaviour
 
         currentTime = wave[waveIndex].delayTime;
 
-        if (wave[waveIndex].spawnAmount == 1)
+        if (wave[waveIndex].spawnAmount == 2) // if spawning 2 circles
             xPos = Random.Range(-xLimit, xLimit);
+
+        else if(wave[waveIndex].spawnAmount > 2) //if spawning 2+ circles
+        {
+            rand = Random.Range(0, remainingPositions.Count); //store value in rand variable
+            xPos = remainingPositions[rand]; //get random pos
+            remainingPositions.RemoveAt(rand); //remove variable from list
+        }
+
+        for (int i = 0; i < wave[waveIndex].spawnAmount; i++) //double tab for for loop
+        {
+            //Spawn(xPos);
+            rand = Random.Range(0, remainingPositions.Count); //store value in rand variable
+            xPos = remainingPositions[rand]; //get random pos
+
+        }
     }
 }
 
