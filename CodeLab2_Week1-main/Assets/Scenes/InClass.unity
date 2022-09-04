@@ -878,12 +878,17 @@ MonoBehaviour:
   - 5.6
   - 7
   circlePrefabs: []
-  wave: []
-  sprites:
-  - {fileID: 21300000, guid: 21ba1126c43294a819ea53fecc36a278, type: 3}
-  - {fileID: 21300000, guid: ec2c48d85835b4f768627d851fc171c4, type: 3}
-  - {fileID: 21300000, guid: 1a290e9671c34407e95b61ec92c61adb, type: 3}
-  - {fileID: 21300000, guid: 469c503b7318446e0a6dbeb4e2f4e051, type: 3}
+  wave:
+  - delayTime: 0.25
+    spawnAmount: 2
+  - delayTime: 0.25
+    spawnAmount: 4
+  - delayTime: 0.25
+    spawnAmount: 6
+  - delayTime: 0.25
+    spawnAmount: 8
+  - delayTime: 0.25
+    spawnAmount: 10
 --- !u!4 &2124668639
 Transform:
   m_ObjectHideFlags: 0
