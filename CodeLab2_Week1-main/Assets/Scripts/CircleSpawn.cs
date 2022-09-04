@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class CircleSpawn : MonoBehaviour
 {
+    #region //falling enemies
+    [SerializeField]
+    private float xLimit;
 
-    public Sprite[] sprites;
+    [SerializeField]
+    private float[] xPositions; //float array, predefined positions
+
+    [SerializeField]
+    //private GameObject[] circlePrefabs;
+    private Sprite[] sprites;
+
+    [SerializeField]
+    private Wave[] wave;
+    #endregion
+
+    //public Sprite[] sprites;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +34,17 @@ public class CircleSpawn : MonoBehaviour
         
     }
 
-    void Spawn() {
-        GameObject go = Instantiate(Resources.Load("Prefabs/Circle")) as GameObject;
-        int num = GetComponent<ColorPicker>().SetSprite();
-        go.GetComponent<SpriteRenderer>().sprite = sprites[num];
+    void Spawn()
+    {
+        GameObject go = Instantiate(Resources.Load("Prefabs/Circle")) as GameObject; //spawn prefabs
+        int num = GetComponent<ColorPicker>().SetSprite(); //call colour picker
+        go.GetComponent<SpriteRenderer>().sprite = sprites[num]; //call sprite renderer
     }
+}
+
+[System.Serializable]
+public class Wave
+{
+    public float delayTime; //time after which wave spawns
+    public float spawnAmount;
 }
