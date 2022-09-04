@@ -17,10 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement()
     {
-        if (Input.GetKey(KeyCode.W)) currentPosition.z += speed * Time.deltaTime; //enable movement into z direction
-        if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //enable movement into z direction
-        if (Input.GetKey(KeyCode.D)) currentPosition.x += speed * Time.deltaTime; //enable movement into z direction
-        if (Input.GetKey(KeyCode.A)) currentPosition.x -= speed * Time.deltaTime; //enable movement into z direction
+        //if (Input.GetKey(KeyCode.W)) currentPosition.z += speed * Time.deltaTime; //enable vertical movement (u)
+        //if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //enable vertical movement (d)
+        if (Input.GetKey(KeyCode.D)) currentPosition.x += speed * Time.deltaTime; //enable lateral movement (l)
+        if (Input.GetKey(KeyCode.A)) currentPosition.x -= speed * Time.deltaTime; //enable lateral movement (r)
 
         transform.position = currentPosition; //set to current position
     }
