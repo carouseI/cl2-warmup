@@ -12,7 +12,19 @@ public class ObjectPooler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pooledObjects = new List<GameObject>(); //set to empty @ start
+
+        foreach(ObjectPoolItems item in itemsToPool)
+        {
+            for (int i = 0; i < item.poolAmount; i++)
+            {
+                GameObject obj = Instantiate(item.poolObject);
+                obj.name = item.name;
+                obj.transform.parent = this.transform; //set as parent
+                obj.SetActive(false); //deactivate
+                pooledObjects.Add(obj);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -25,7 +37,7 @@ public class ObjectPooler : MonoBehaviour
 [System.Serializable]
 public class ObjectPoolItems
 {
-    public string circle;
+    public string name;
     public int poolAmount; //spawn amount
     public GameObject poolObject; //prefab ref storage
     public bool shouldExpand; //create more obj as required
