@@ -153,19 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToPool:
-  - circle: Blue
+  - name: 
     poolAmount: 2
     poolObject: {fileID: 8218883895661145634, guid: 7ec72c2b8540b4a80a9650992ffba21b, type: 3}
     shouldExpand: 1
-  - circle: Green
+  - name: 
     poolAmount: 2
     poolObject: {fileID: 6522392447404174706, guid: b41dd10f6b628481d93e5ce0ab3693c7, type: 3}
     shouldExpand: 1
-  - circle: Red
+  - name: 
     poolAmount: 2
     poolObject: {fileID: 2845396488706238598, guid: bb17f2e00945b41858644cdca4795720, type: 3}
     shouldExpand: 1
-  - circle: Yellow
+  - name: 
     poolAmount: 2
     poolObject: {fileID: 6332375287432333310, guid: cf19fcb17c4ef47f19661c02d37a279f, type: 3}
     shouldExpand: 1
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124668637}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfe2a49a71a0b46019d7fc06b489096e, type: 3}
   m_Name: 
