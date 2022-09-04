@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance; //attachable to 1 obj per scene
+    private Vector3 playerPosition;
+
+    public bool StartMoving { get { return StartMoving; } }
+
     [SerializeField]
     float movementSpeed;
 
-    private Vector3 playerPosition;
+    private void Awake()
+    {
+        if (instance == null) //if null
+            instance = this; //set this obj as instance
+    }
 
     private void Start()
     {

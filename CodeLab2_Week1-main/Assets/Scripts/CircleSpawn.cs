@@ -41,7 +41,14 @@ public class CircleSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(PlayerController.instance.StartMoving == true) //if true
+        {
+            currentTime -= Time.deltaTime; //reduce current time
+            if(currentTime <= 0) //if time is less than 0
+            {
+                SelectWave(); //call selectWave method
+            }
+        }
     }
 
     void Spawn()
