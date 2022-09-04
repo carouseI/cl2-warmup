@@ -4,29 +4,34 @@ using UnityEngine;
 
 public class Disk : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [SerializeField] GameObject[] diskPrefab;
+    [SerializeField] float secondSpawn = 0.5f;
+    [SerializeField] float minTrans;
+    [SerializeField] float maxTrans;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); //check for rb comp
+        StartCoroutine(DiskSpawn());
+    }
+
+    IEnumerator DiskSpawn()
+    {
+        while (true)
+        {
+            var wanted = Random.Range(minTrans, maxTrans);
+            var position = new Vector3(wanted, transform.position.y);
+            GameObject gameObject = Instantiate(diskPrefab[Random.Range(0, diskPrefab.Length)],
+            position, Quaternion.identity);
+            yield return new WaitForSeconds(secondSpawn);
+            Destroy(gameObject, 5f);
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision) //invoke when player enters hit zone
-    {
-        if (collision.gameObject.name.Equals("Player"))
-            rb.isKinematic = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name.Equals("Player"))
-            Debug.Log("hit");
     }
 }
