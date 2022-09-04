@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float playerSpeed;
+    [SerializeField]
+    float movementSpeed;
 
-    private float move;
-    //private Rigidbody2D rb;
-    
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 playerPosition;
+
+    private void Start()
     {
-        //rb = GetComponent<Rigidbody2D>(); //check for player rb comp
+        playerPosition = transform.position; //set player default pos
     }
 
     // Update is called once per frame
     void Update()
     {
-        move = Input.GetAxis("Horizontal"); //get lateral movt input
+        //if (Input.GetKey(KeyCode.W)) currentPosition.z += speed * Time.deltaTime; //enable vertical movement (u)
+        //if (Input.GetKey(KeyCode.S)) currentPosition.z -= speed * Time.deltaTime; //enable vertical movement (d)
+        if (Input.GetKey(KeyCode.D)) playerPosition.x += movementSpeed * Time.deltaTime; //enable lateral movement (l)
+        if (Input.GetKey(KeyCode.A)) playerPosition.x -= movementSpeed * Time.deltaTime; //enable lateral movement (r)
 
-        //rb.velocity = new Vector2(move * playerSpeed, rb.velocity.y); //apply velocity to rb
+        transform.position = playerPosition; //set to current position
     }
 
     private void OnTriggerEnter2D(Collider2D other)
