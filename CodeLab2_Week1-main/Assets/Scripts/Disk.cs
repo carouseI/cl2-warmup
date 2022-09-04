@@ -20,9 +20,9 @@ public class Disk : MonoBehaviour
         while (true)
         {
             var wanted = Random.Range(minTrans, maxTrans); //spawn within min + max transforms
-            var position = new Vector3(wanted, transform.position.y);
+            var position = new Vector3(wanted, transform.position.y); //spawn position selection
             GameObject gameObject = Instantiate(diskPrefab[Random.Range(0, diskPrefab.Length)],
-            position, Quaternion.identity);
+            position, Quaternion.identity); //random spawn set
             yield return new WaitForSeconds(secondSpawn); //spawn frequency
             Destroy(gameObject, 5f); //remove from scene
 
