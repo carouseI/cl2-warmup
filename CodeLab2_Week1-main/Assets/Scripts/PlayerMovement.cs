@@ -24,4 +24,12 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = playerPosition; //set to current position
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Disk")) //if tagged
+        {
+            Destroy(other.gameObject); //destroy obj
+        }
+    }
 }
