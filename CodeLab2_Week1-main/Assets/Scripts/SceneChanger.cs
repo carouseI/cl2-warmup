@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void GoToScene(string sceneName)
     {
+        Debug.Log("clicked"); //check button functionality
         SceneManager.LoadScene(sceneName); //load next scene
     }
 }
